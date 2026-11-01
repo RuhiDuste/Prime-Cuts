@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e7">
+  <meta name="description" content="Fresh lamb, beef and chicken, plus processed and marinated products prepared with care.">
+  <title>The Good Cut — Fresh, prepared &amp; marinated</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f0e7;
+      --ink: #24231f;
+      --muted: #716e65;
+      --red: #a63d2b;
+      --line: #ded7ca;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .announcement {
+      padding: 10px 24px;
+      background: var(--ink);
+      color: #f8f3eb;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .announcement span { color: #e6a18b; }
+    header {
+      max-width: 1280px;
+      margin: auto;
+      min-height: 82px;
+      padding: 0 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -.06em;
+    }
+    .brand-mark { color: var(--red); }
+    nav { display: flex; align-items: center; gap: 34px; }
+    nav a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    nav a:hover, .text-link:hover { color: var(--red); }
+    .nav-cta {
+      border: 1px solid var(--ink);
+      padding: 12px 17px;
+      transition: background .2s, color .2s;
+    }
+    .nav-cta:hover { background: var(--ink); color: var(--paper); }
+    .hero {
+      max-width: 1280px;
+      margin: auto;
+      min-height: 580px;
+      padding: 58px 6% 70px;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 6%;
+      align-items: center;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 0 0 22px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 490px;
+      margin-bottom: 21px;
+      font-family: var(--serif);
+      font-size: clamp(52px, 6vw, 78px);
+      font-weight: 500;
+      letter-spacing: -.065em;
+      line-height: .99;
+    }
+    h1 em { color: var(--red); font-weight: 500; }
+    .hero-copy {
+      max-width: 390px;
+      margin-bottom: 29px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      padding: 0 21px;
+      background: var(--red);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: background .2s, transform .2s;
+    }
+    .button:hover { background: #833020; transform: translateY(-2px); }
+    .button span { font-size: 18px; font-weight: 400; }
+    .hero-photo {
+      position: relative;
+      min-height: 440px;
+      background: #c6aa8d url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1400&q=85") center 52% / cover;
+    }
+    .photo-note {
+      position: absolute;
+      right: -17px;
+      bottom: 25px;
+      width: 170px;
+      padding: 18px 20px;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    .photo-note strong {
+      display: block;
+      margin-bottom: 5px;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .photo-note span { color: var(--muted); font-size: 11px; }
+    .promise {
+      background: #e9e2d6;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .promise-inner {
+      max-width: 1280px;
+      margin: auto;
+      padding: 22px 6%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .promise-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .promise-item span { color: var(--red); font-size: 19px; }
+    .section {
+      max-width: 1280px;
+      margin: auto;
+      padding: 92px 6% 100px;
+    }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+    .section-heading .eyebrow { margin-bottom: 13px; }
+    h2 {
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 50px);
+      font-weight: 500;
+      letter-spacing: -.05em;
+      line-height: 1.1;
+    }
+    .text-link {
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--red);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+    .cuts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .cut-card { min-width: 0; }
+    .cut-image {
+      height: 290px;
+      margin-bottom: 19px;
+      background-position: center;
+      background-size: cover;
+      transition: filter .2s;
+    }
+    .cut-card:hover .cut-image { filter: brightness(.92); }
+    .lamb { background-image: url("https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=900&q=80"); }
+    .beef { background-image: url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=80"); }
+    .chicken { background-image: url("https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=80"); }
+    .cut-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 7px;
+    }
+    .cut-title h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: -.03em;
+    }
+    .cut-title span { color: var(--red); font-size: 18px; }
+    .cut-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .prepared-callout {
+      margin-top: 40px;
+      padding: 30px 34px;
+      background: #e9e2d6;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .prepared-callout .eyebrow { margin-bottom: 10px; }
+    .prepared-callout h3 {
+      margin-bottom: 7px;
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 600;
+      letter-spacing: -.03em;
+    }
+    .prepared-callout p {
+      max-width: 580px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .story {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .story-inner {
+      max-width: 1280px;
+      margin: auto;
+      padding: 68px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .story .eyebrow { color: #e6a18b; }
+    .story h2 { max-width: 600px; }
+    .story p {
+      max-width: 370px;
+      margin: 13px 0 0;
+      color: #c7c1b6;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .story .button { background: var(--paper); color: var(--ink); white-space: nowrap; }
+    .story .button:hover { background: #e5d7c5; }
+    footer {
+      max-width: 1280px;
+      margin: auto;
+      padding: 27px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    footer .brand { color: var(--ink); font-size: 22px; }
+    @media (max-width: 760px) {
+      header { min-height: 72px; }
+      nav { gap: 14px; }
+      nav a:not(.nav-cta) { display: none; }
+      .hero { min-height: auto; padding-top: 52px; grid-template-columns: 1fr; gap: 38px; }
+      h1 { font-size: clamp(52px, 13vw, 72px); }
+      .hero-photo { min-height: 350px; margin-right: 12px; }
+      .photo-note { right: -12px; }
+      .promise-inner { justify-content: flex-start; flex-wrap: wrap; gap: 17px 26px; }
+      .section { padding-top: 70px; padding-bottom: 76px; }
+      .cuts { grid-template-columns: 1fr; gap: 33px; }
+      .cut-image { height: min(72vw, 370px); }
+      .section-heading { align-items: start; flex-direction: column; }
+      .prepared-callout { align-items: flex-start; flex-direction: column; padding: 25px; gap: 20px; }
+      .story-inner { align-items: flex-start; flex-direction: column; padding-top: 58px; padding-bottom: 58px; }
+    }
+    @media (max-width: 420px) {
+      .announcement { font-size: 9px; }
+      .promise-item { font-size: 11px; }
+      footer { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">Good food starts with good people <span>— fresh cuts, prepared favorites</span></div>
+  <header>
+    <a class="brand" href="#" aria-label="The Good Cut home">the good<span class="brand-mark">.</span>cut</a>
+    <nav aria-label="Main navigation">
+      <a href="#our-cuts">Our cuts</a>
+      <a href="#our-story">Our story</a>
+      <a class="nav-cta" href="mailto:hello@thegoodcut.example">Get in touch</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Your neighborhood butchery</p>
+        <h1 id="hero-title">A better cut.<br><em>A better dinner.</em></h1>
+        <p class="hero-copy">Good meat, done right. Choose fresh lamb, beef and chicken, or make dinner easier with our processed and marinated favorites.</p>
+        <a class="button" href="#our-cuts">Find your cut <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Freshly prepared cuts of meat">
+        <div class="photo-note"><strong>Made for good meals.</strong><span>Fresh cuts and ready-to-cook favorites.</span></div>
+      </div>
+    </section>
+
+    <div class="promise" aria-label="Our promises">
+      <div class="promise-inner">
+        <div class="promise-item"><span aria-hidden="true">✳</span> Fresh every day</div>
+        <div class="promise-item"><span aria-hidden="true">✳</span> Prepared &amp; marinated options</div>
+        <div class="promise-item"><span aria-hidden="true">✳</span> Cut just how you like it</div>
+        <div class="promise-item"><span aria-hidden="true">✳</span> Good advice, always</div>
+      </div>
+    </div>
+
+    <section class="section" id="our-cuts" aria-labelledby="cuts-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Something for the table</p>
+          <h2 id="cuts-title">Fresh cuts &amp;<br>ready-to-cook favorites.</h2>
+        </div>
+        <a class="text-link" href="mailto:hello@thegoodcut.example">Ask our butcher <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="cuts">
+        <article class="cut-card">
+          <div class="cut-image lamb" role="img" aria-label="Fresh lamb cuts"></div>
+          <div class="cut-title"><h3>Fresh lamb</h3><span aria-hidden="true">↗</span></div>
+          <p>From Sunday roasts to weeknight chops, with marinated options for an easy, flavorful meal.</p>
+        </article>
+        <article class="cut-card">
+          <div class="cut-image beef" role="img" aria-label="Fresh beef cuts"></div>
+          <div class="cut-title"><h3>Quality beef</h3><span aria-hidden="true">↗</span></div>
+          <p>Steaks, slow-cook favorites and marinated choices, ready for your next meal.</p>
+        </article>
+        <article class="cut-card">
+          <div class="cut-image chicken" role="img" aria-label="Fresh chicken"></div>
+          <div class="cut-title"><h3>Fresh chicken</h3><span aria-hidden="true">↗</span></div>
+          <p>Fresh chicken and marinated favorites for simple, delicious meals.</p>
+        </article>
+      </div>
+      <aside class="prepared-callout" aria-label="Processed and marinated products">
+        <div>
+          <p class="eyebrow">Good to go</p>
+          <h3>Processed &amp; marinated</h3>
+          <p>Looking for something ready to cook? We also offer processed and marinated meat products. Get in touch to ask about available cuts and flavors.</p>
+        </div>
+        <a class="button" href="mailto:hello@thegoodcut.example">Ask what's available <span aria-hidden="true">→</span></a>
+      </aside>
+    </section>
+
+    <section class="story" id="our-story" aria-labelledby="story-title">
+      <div class="story-inner">
+        <div>
+          <p class="eyebrow">The good cut difference</p>
+          <h2 id="story-title">You bring the recipe.<br>We’ll help with the rest.</h2>
+          <p>Not sure what to choose? Tell us what’s for dinner and we’ll help you find the right cut, portion and cooking tips.</p>
+        </div>
+        <a class="button" href="mailto:hello@thegoodcut.example">Talk to your butcher <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#" aria-label="The Good Cut home">the good<span class="brand-mark">.</span>cut</a>
+    <span>Fresh, processed &amp; marinated lamb, beef and chicken.</span>
+    <a href="mailto:hello@thegoodcut.example">hello@thegoodcut.example</a>
+  </footer>
+</body>
+</html>
